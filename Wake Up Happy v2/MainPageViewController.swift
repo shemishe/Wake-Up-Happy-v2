@@ -24,18 +24,18 @@ class MainPageViewController: UIViewController {
         shadow.shadowColor = UIColor.white
         shadow.shadowOffset = CGSize(width: 2, height: 2)
         let attributes: [NSAttributedString.Key: Any] = [
-            .font: UIFont.init(name: "Launica", size: 75)!,
+            .font: UIFont.init(name: "launica", size: 75)!,
             .foregroundColor: UIColor.init(red: 91.0/255.0, green: 91.0/255.0, blue: 91.0/255.0, alpha: 1.0),
             .shadow: shadow
         ]
         let attributedText = NSAttributedString(string: text, attributes: attributes)
-        textView.attributedText = attributedText
-        textView.textAlignment = .center
-        textView.isEditable = false
-        textView.isScrollEnabled = false
-        textView.isSelectable = false
+        textView.attributedText         = attributedText
+        textView.textAlignment          = .center
+        textView.isEditable             = false
+        textView.isScrollEnabled        = false
+        textView.isSelectable           = false
+        textView.backgroundColor        = .clear
         textView.translatesAutoresizingMaskIntoConstraints = false
-        textView.backgroundColor = .clear
         return textView
     }()
     
@@ -89,9 +89,17 @@ class MainPageViewController: UIViewController {
     
     lazy var descriptionTextViewTwo: UITextView = descriptionTextView(with: "A happy video a day\nmakes the heartache\ngo away.")
     
-    let aboutButton: UIButton = {
+    private let aboutButton: UIButton = {
         let button = UIButton(type: .system)
-        
+        button.setTitle("About", for: .normal)
+        button.translatesAutoresizingMaskIntoConstraints = false
+        return button
+    }()
+    
+    private let infoButton: UIButton = {
+        let button = UIButton(type: .system)
+        button.setTitle("Info", for: .normal)
+        button.translatesAutoresizingMaskIntoConstraints = false
         return button
     }()
     
@@ -103,6 +111,8 @@ class MainPageViewController: UIViewController {
         //        view.addSubview(titleTextView)
         
         layoutSetup()
+        
+        bottomControlsSetup()
     }
     
     private func descriptionTextView(with text: String) -> UITextView {
@@ -115,14 +125,24 @@ class MainPageViewController: UIViewController {
             .foregroundColor: UIColor.init(red: 91.0/255.0, green: 91.0/255.0, blue: 91.0/255.0, alpha: 1.0),
             .shadow: shadow
         ]
-        textView.attributedText = NSAttributedString(string: text, attributes: attributes)
-        textView.textAlignment = .center
-        textView.isEditable = false
-        textView.isScrollEnabled = false
-        textView.isSelectable = false
+        textView.attributedText         = NSAttributedString(string: text, attributes: attributes)
+        textView.textAlignment          = .center
+        textView.isEditable             = false
+        textView.isScrollEnabled        = false
+        textView.isSelectable           = false
+        textView.backgroundColor        = .clear
         textView.translatesAutoresizingMaskIntoConstraints = false
-        textView.backgroundColor = .clear
         return textView
+    }
+    
+    private func bottomControlsSetup() {
+        
+        let bottomButtonsStackView = UIStackView(arrangedSubviews: [aboutButton, infoButton])
+        bottomButtonsStackView.translatesAutoresizingMaskIntoConstraints = false
+        bottomButtonsStackView.distribution = .fillEqually
+        
+        view.addSubview(bottomButtonsStackView)
+        bottomButtonsStackView.anchorWithConstant(top: nil, paddingTop: 0, bottom: view.safeAreaLayoutGuide.bottomAnchor, paddingBottom: 0, leading: view.safeAreaLayoutGuide.leadingAnchor, paddingLeading: 0, trailing: view.safeAreaLayoutGuide.trailingAnchor, paddingTrailing: 0, width: 0, height: 0)
     }
     
     private func layoutSetup() {
@@ -154,8 +174,6 @@ class MainPageViewController: UIViewController {
         
         backgroundImageView.anchorWithConstant(top: view.topAnchor, paddingTop: 0, bottom: view.bottomAnchor, paddingBottom: 0, leading: view.leadingAnchor, paddingLeading: 0, trailing: view.trailingAnchor, paddingTrailing: 0, width: 0, height: 0)
     }
-    
-    
 }
 
 extension UIView {
@@ -166,23 +184,18 @@ extension UIView {
         if let top = top {
             topAnchor.constraint(equalTo: top, constant: paddingTop).isActive = true
         }
-        
         if let bottom = bottom {
             bottomAnchor.constraint(equalTo: bottom, constant: paddingBottom).isActive = true
         }
-        
         if let leading = leading {
             leadingAnchor.constraint(equalTo: leading, constant: paddingLeading).isActive = true
         }
-        
         if let trailing = trailing {
             trailingAnchor.constraint(equalTo: trailing, constant: paddingTrailing).isActive = true
         }
-        
         if width != 0 {
             widthAnchor.constraint(equalToConstant: width).isActive = true
         }
-        
         if height != 0 {
             heightAnchor.constraint(equalToConstant: height).isAccessibilityElement = true
         }

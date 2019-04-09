@@ -12,6 +12,8 @@
 		E958D9AA225BAE43001E4446 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E958D9A8225BAE43001E4446 /* Main.storyboard */; };
 		E958D9AC225BAE44001E4446 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E958D9AB225BAE44001E4446 /* Assets.xcassets */; };
 		E958D9AF225BAE44001E4446 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E958D9AD225BAE44001E4446 /* LaunchScreen.storyboard */; };
+		E958D9B9225BB24D001E4446 /* launica 2.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E958D9B6225BAF80001E4446 /* launica 2.ttf */; };
+		E958D9BA225BB250001E4446 /* launica.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E958D9B7225BAF84001E4446 /* launica.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +24,8 @@
 		E958D9AB225BAE44001E4446 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E958D9AE225BAE44001E4446 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E958D9B0225BAE44001E4446 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E958D9B6225BAF80001E4446 /* launica 2.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "launica 2.ttf"; sourceTree = "<group>"; };
+		E958D9B7225BAF84001E4446 /* launica.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = launica.ttf; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,8 +64,18 @@
 				E958D9AB225BAE44001E4446 /* Assets.xcassets */,
 				E958D9AD225BAE44001E4446 /* LaunchScreen.storyboard */,
 				E958D9B0225BAE44001E4446 /* Info.plist */,
+				E958D9B8225BB1BD001E4446 /* Fonts */,
 			);
 			path = "Wake Up Happy v2";
+			sourceTree = "<group>";
+		};
+		E958D9B8225BB1BD001E4446 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				E958D9B6225BAF80001E4446 /* launica 2.ttf */,
+				E958D9B7225BAF84001E4446 /* launica.ttf */,
+			);
+			path = Fonts;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -122,6 +136,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E958D9BA225BB250001E4446 /* launica.ttf in Resources */,
+				E958D9B9225BB24D001E4446 /* launica 2.ttf in Resources */,
 				E958D9AF225BAE44001E4446 /* LaunchScreen.storyboard in Resources */,
 				E958D9AC225BAE44001E4446 /* Assets.xcassets in Resources */,
 				E958D9AA225BAE43001E4446 /* Main.storyboard in Resources */,
